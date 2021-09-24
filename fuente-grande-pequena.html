@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aumentar o reducir el tamaño de la fuente</title>
+  <style>
+    html {
+      font-size: 100%;
+    }
+    body {
+      font-size: 1rem;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+    li {
+      font-size: 0.9rem;
+    }
+    .f0 {
+      font-size: 0.8rem;
+    }
+    .f1 {
+      font-size: 0.9rem;
+    }
+    .f2 {
+      font-size: 1rem;
+    }
+    .f3 {
+      font-size: 1.1rem;
+    }
+    .f4 {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ejemplo de cambio de fuente</h1>
+  <p>Esta página puede cambiar el tamaño de la letra, aumentar o disminuir.</p>
+  <p>Necesitas saber:</p>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+  <p>
+    <button id="aumentar">Aumentar</button>
+    <button id="disminuir">Disminuir</button>
+  </p>
+  <script>
+    var classes = ["f0", "f1", "f2", "f3", "f4"];
+    var classIndex = 2;
+    document.getElementById('aumentar').addEventListener('click', function() {
+      let previousClass = classIndex;
+      classIndex++;
+      classIndex = (classIndex == clases.length) ? clases.length - 1 : classIndex;
+      changeClass(previousClass, classIndex);
+    });
+    document.getElementById('disminuir').addEventListener('click', function () {
+      let previousClass = classIndex;
+      classIndex--;
+      classIndex = (classIndex < 0) ? 0 : classIndex;
+      changeClass(previousClass, classIndex);
+    });
+    function changeClass(previous, next) {
+      if(previous != next) {
+        var htmlElement = document.querySelector('html')
+        htmlElement.classList.remove(classes[previous]);
+        htmlElement.classList.add(classes[next]);
+      }
+    }
+  </script>
+</body>
+</html>
