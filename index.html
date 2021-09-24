@@ -54,7 +54,7 @@
     document.getElementById('aumentar').addEventListener('click', function() {
       let previousClass = classIndex;
       classIndex++;
-      classIndex = (classIndex == clases.length) ? clases.length - 1 : classIndex;
+      classIndex = (classIndex == classes.length) ? classes.length - 1 : classIndex;
       changeClass(previousClass, classIndex);
     });
     document.getElementById('disminuir').addEventListener('click', function () {
